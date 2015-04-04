@@ -1,0 +1,4 @@
+APItest.configure:
+  route_name: APItest.configure
+  title: 'Configuration'
+  tab_root_id: APItest.configure

@@ -1,0 +1,6 @@
+APItest.configure:
+  path: '/admin/config/user-interface/APItest'
+  defaults:
+    _form: '\Drupal\APItest\Form\APItestConfigurationForm'
+  requirements:
+    _permission: 'administer APItest'

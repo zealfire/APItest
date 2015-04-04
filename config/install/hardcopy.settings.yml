@@ -1,0 +1,6 @@
+APItest_entities:
+  - node
+  - comment
+open_target_blank: TRUE
+css_include: ''
+extract_links: ''

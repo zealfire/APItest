@@ -1,0 +1,6 @@
+name: APItest
+type: module
+description: 'Generates all the compatible entities using entity API'
+package: APItest
+core: 8.x
+configure: APItest.configure

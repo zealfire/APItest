@@ -1,0 +1,23 @@
+services:
+  APItest.entity_manager:
+    class: Drupal\APItest\APItestEntityManager
+    arguments: ['@entity.manager', '@config.factory', '@url_generator', '@plugin.manager.APItestformat']
+  APItest.link_builder:
+    class: Drupal\APItest\APItestLinkBuilder
+    arguments: ['@config.factory', '@url_generator', '@plugin.manager.APItestformat']
+  APItest.css_include:
+    class: Drupal\APItest\APItestCssInclude
+    arguments: ['@config.factory', '@theme_handler']
+  APItest.subscriber.route:
+    class: Drupal\APItest\Routing\RouteSubscriber
+    arguments: ['@APItest.entity_manager']
+    tags:
+     - { name: event_subscriber }
+  plugin.manager.APItestformat:
+    class: Drupal\APItest\APItestFormatPluginManager
+    arguments: ['@container.namespaces', '@config.factory', '@module_handler']
+  dom_crawler:
+    class: Wa72\HtmlPageDom\HtmlPageCrawler
+  APItest.link_extractor:
+    class: Drupal\APItest\LinkExtractor\InlineLinkExtractor
+    arguments: ['@dom_crawler', '@url_generator']

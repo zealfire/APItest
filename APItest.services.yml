@@ -1,5 +1,8 @@
 services:
   APItest.entity_manager:
     class: Drupal\APItest\APItestEntityManager
-    arguments: ['@entity.manager', '@config.factory', '@url_generator', '@plugin.manager.APItestformat']
-  
+    arguments: ['@entity.manager', '@config.factory']
+  plugin.manager.APItestformat:
+    class: Drupal\APItest\APItestFormatPluginManager
+    arguments: ['@container.namespaces', '@config.factory', '@module_handler']
+

@@ -72,15 +72,5 @@ class APItestController extends ControllerBase implements ContainerInjectionInte
     //);
   }
 
-  public function demo(/*$entity1,$APItest_format*/) {
-  return array(
-      '#markup' => t('Hello World!'),
-    );
- }
- public function demo1($entity) {
-return array(
-      '#markup' => t('fuck World!'),
-    );
- }
 }
 
